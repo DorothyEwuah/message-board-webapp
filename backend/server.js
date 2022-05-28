@@ -15,21 +15,24 @@ var messages = [
 ];
 
 app.use(bodyParser.json());
-
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 })
 
-app.get("/messages", (req, res) => {
+var api = express.Router();
+
+api.get("/messages", (req, res) => {
     res.json(messages);
 })
 
-app.post("/message", (req, res) => {
+api.post("/messages", (req, res) => {
    console.log(req.body);
+   messages.push(req.body);
    res.sendStatus(200);
 })
 
+app.use('/api', api);
 
 app.listen(1234);
