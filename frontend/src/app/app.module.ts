@@ -9,11 +9,13 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { WebService } from './webservice.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NewMessageComponent } from './new-message/new-message.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MessagesComponent
+    MessagesComponent,
+    NewMessageComponent
   ],
   imports: [
     BrowserModule,
