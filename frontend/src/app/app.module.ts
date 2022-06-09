@@ -10,6 +10,7 @@ import {MatCardModule} from '@angular/material/card';
 import { WebService } from './webservice.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NewMessageComponent } from './new-message/new-message.component';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { NewMessageComponent } from './new-message/new-message.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
+    MatInputModule,
     HttpClientModule
   ],
   providers: [WebService],
