@@ -7,12 +7,17 @@ import { Message } from './messagesModel';
   providedIn: 'root'
 })
 export class WebService {
+  baseUrl = "http://localhost:1234/api/";
 
   constructor(private http: HttpClient) { }
 
   getMessages(): Observable<Message[]>{
-    let response = this.http.get<Message[]>('http://localhost:1234/api/messages');
+    let response = this.http.get<Message[]>(`${this.baseUrl} messages`);
     console.log(response)
     return response ;
+  }
+
+  postMessage(message:Observable<Message>){
+    return(this.http.post<Message>(`${this.baseUrl}messages`, message));
   }
 }
