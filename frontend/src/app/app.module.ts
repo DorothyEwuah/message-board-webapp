@@ -11,6 +11,7 @@ import { WebService } from './webservice.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NewMessageComponent } from './new-message/new-message.component';
 import {MatInputModule} from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {MatInputModule} from '@angular/material/input';
     MatButtonModule,
     MatCardModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [WebService],
   bootstrap: [AppComponent]
