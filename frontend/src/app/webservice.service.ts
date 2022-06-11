@@ -12,12 +12,14 @@ export class WebService {
   constructor(private http: HttpClient) { }
 
   getMessages(): Observable<Message[]>{
-    let response = this.http.get<Message[]>(`${this.baseUrl} messages`);
+    let response = this.http.get<Message[]>(`${this.baseUrl}messages`);
     console.log(response)
     return response ;
   }
 
-  postMessage(message:Observable<Message>){
-    return(this.http.post<Message>(`${this.baseUrl}messages`, message));
+  postMessage(message:Message){
+    let response = this.http.post<Message>(`${this.baseUrl}messages`, message);
+    console.log(response);
+    return(response);
   }
 }
