@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontend';
+
+onPosted(message: any){
+  console.log(message);
 }
+
+}
+
