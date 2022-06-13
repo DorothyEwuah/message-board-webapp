@@ -8,19 +8,20 @@ import { Message } from '../messagesModel';
   styleUrls: ['./new-message.component.scss'],
 })
 export class NewMessageComponent implements OnInit {
+  @Output() onPosted = new EventEmitter();
   constructor(private webService: WebService) {}
   message: Message = new Message;
   messageRes:any;
-  @Output() onPosted = new EventEmitter();
+  
   ngOnInit(): void {
   }
 
   post(){
-    console.log(this.message)
+
     this.webService.postMessage(this.message).subscribe(res=>{
       this.messageRes = res;
       this.onPosted.emit(this.message);
-      console.log(this.message)
+      // console.log(this.message)
     });
    
   }

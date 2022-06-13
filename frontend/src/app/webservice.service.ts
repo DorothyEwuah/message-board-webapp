@@ -13,13 +13,13 @@ export class WebService {
 
   getMessages(): Observable<Message[]>{
     let response = this.http.get<Message[]>(`${this.baseUrl}messages`);
-    console.log(response)
+    // console.log(response)
     return response ;
   }
 
   postMessage(message:Message){
     let response = this.http.post<Message>(`${this.baseUrl}messages`, message);
-    console.log(response);
+    // console.log(response);
     return(response);
   }
 }

@@ -21,7 +21,7 @@ export class MessagesComponent implements OnInit {
 
    this.webService.getMessages().subscribe(res => {
      this.messages = res;
-     console.log(this.messages);
+    //  console.log(this.messages);
    })
     // this.messages = response;
    
