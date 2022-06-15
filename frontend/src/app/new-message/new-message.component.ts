@@ -9,6 +9,7 @@ import { Message } from '../messagesModel';
 })
 export class NewMessageComponent implements OnInit {
   @Output() onPosted = new EventEmitter();
+
   constructor(private webService: WebService) {}
   message: Message = new Message;
   messageRes:any;
@@ -19,10 +20,16 @@ export class NewMessageComponent implements OnInit {
   post(){
 
     this.webService.postMessage(this.message).subscribe(res=>{
-      this.messageRes = res;
+      this.messageRes = JSON.stringify(res);
+      // console.log(JSON.parse(this.messageRes));
       this.onPosted.emit(this.message);
-      // console.log(this.message)
-    });
+      
+    }
+    // ,
+    // (error:any) => {
+    //   console.log(error)
+    // }
+    );
    
   }
 }
