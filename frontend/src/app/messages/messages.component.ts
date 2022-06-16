@@ -10,19 +10,18 @@ import { Message } from '../messagesModel';
 export class MessagesComponent implements OnInit {
 
   response: any;
-  messages?: Message[];
   
-  constructor(private webService:WebService) { }
+  constructor(public webService:WebService) { }
 
   
   ngOnInit() {
     
   //  let response = await this.webService.getMessages();
 
-   this.webService.getMessages().subscribe(res => {
-     this.messages = res;
-    //  console.log(this.messages);
-   })
+  //  this.webService.getMessages().subscribe(res => {
+  //    this.messages = res;
+  //   //  console.log(this.messages);
+  //  })
     // this.messages = response;
    
   }
