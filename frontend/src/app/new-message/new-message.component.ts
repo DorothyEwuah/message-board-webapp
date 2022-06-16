@@ -8,7 +8,7 @@ import { Message } from '../messagesModel';
   styleUrls: ['./new-message.component.scss'],
 })
 export class NewMessageComponent implements OnInit {
-  @Output() onPosted = new EventEmitter();
+  // @Output() onPosted = new EventEmitter();
 
   constructor(private webService: WebService) {}
   message: Message = new Message;
@@ -18,18 +18,19 @@ export class NewMessageComponent implements OnInit {
   }
 
   post(){
-
-    this.webService.postMessage(this.message).subscribe(res=>{
-      this.messageRes = JSON.stringify(res);
-      // console.log(JSON.parse(this.messageRes));
-      this.onPosted.emit(this.message);
+    this.webService.postMessage(this.message);
+    console.log(this.message);
+    // this.webService.postMessage(this.message).subscribe(res=>{
+    //   this.messageRes = JSON.stringify(res);
+    //   // console.log(JSON.parse(this.messageRes));
+    //   this.onPosted.emit(this.message);
       
-    }
+    // }
     // ,
     // (error:any) => {
     //   console.log(error)
     // }
-    );
+    // );
    
   }
 }

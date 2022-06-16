@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MessagesComponent } from './messages/messages.component';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontend';
+  // @ViewChild(MessagesComponent)
+  // messages!: MessagesComponent;
 
-onPosted(message: any){
-  console.log(message);
-}
+// onPosted(message: any){
+//   this.messages.messages?.push(message);
+//   console.log(message);
+// }
 
 }
 

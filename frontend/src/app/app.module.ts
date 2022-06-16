@@ -12,12 +12,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { NewMessageComponent } from './new-message/new-message.component';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { NavComponent } from './nav/nav.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
     MessagesComponent,
-    NewMessageComponent
+    NewMessageComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +32,10 @@ import { FormsModule } from '@angular/forms';
     MatCardModule,
     MatInputModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatSnackBarModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [WebService],
   bootstrap: [AppComponent]

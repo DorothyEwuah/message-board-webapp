@@ -5,12 +5,14 @@ var bodyParser = require('body-parser');
 
 var messages = [
     {
-        text: 'some text',
-        owner: 'Tim'
+        owner: 'Tim',
+        text: 'some text'
+
     },
     {
-        text: 'other text',
-        owner: 'Olli'
+        owner: 'Olli',
+        text: 'other text'
+
     }
 ];
 
@@ -28,9 +30,10 @@ api.get("/messages", (req, res) => {
 })
 
 api.post("/message", (req, res) => {
-   console.log(req.body);
-   messages.push(req.body);
-   res.sendStatus(200);
+    console.log(req.body);
+    messages.push(req.body);
+    res.json(req.body);
+    //    res.sendStatus(200);
 })
 
 app.use('/api', api);
