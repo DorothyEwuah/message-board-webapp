@@ -1,6 +1,6 @@
 
 
-<div *ngFor="let message of webService.messages">
+<div *ngFor="let message of messages">
   <mat-card style="margin: 8px;">
     <mat-card-title [routerLink] = "['/messages', message.owner]" style ="cursor: pointer;">{{ message.owner }}</mat-card-title>
     <mat-card-content>
