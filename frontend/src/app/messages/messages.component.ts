@@ -20,8 +20,10 @@ export class MessagesComponent implements OnInit {
   ngOnInit() {
     let name = this.activatedRoute.snapshot.params['name'];
     this.webService.getMessages(name);
+    console.log(this.messages)
     this.webService.messages.subscribe(messages=>{
       this.messages = messages;
+      console.log(this.messages)
     })
 
     //  let response = await this.webService.getMessages();
