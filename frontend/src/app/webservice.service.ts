@@ -9,8 +9,10 @@ import { Subject } from 'rxjs';
 })
 export class WebService {
   baseUrl = 'http://localhost:1234/api/';
-  private messages: any = [];
-  messageSubject = new Subject();
+  private messageStore: any = [];
+  private messageSubject = new Subject();
+
+  messages = this.messageSubject.asObservable();
 
   private httpHeaders = new HttpHeaders().set(
     'Content-Type',
@@ -55,12 +57,10 @@ export class WebService {
   // }
 
   getMessages(user: any) {
-    
-   
       user = (user) ? '/' + user : '';
      this.http
         .get<Message[]>(`${this.baseUrl}messages` + user).subscribe(response=>{
-          this.messages = response;
+          this.messageStore = response;
           this.messageSubject.next(this.messages);
           console.log(this.messages);
         },error=>{
@@ -77,7 +77,7 @@ export class WebService {
           responseType: 'json',
         })
         .toPromise();
-      this.messages.push(response);
+      this.messageStore.push(response);
       console.log(this.messages);
       // return response;
     } catch (error) {
