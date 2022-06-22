@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MessagesComponent implements OnInit {
   response: any;
-  messages:any;
+  messages: any;
 
   constructor(
     public webService: WebService,
