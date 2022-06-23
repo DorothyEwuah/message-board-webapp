@@ -61,7 +61,7 @@ export class WebService {
      this.http
         .get<Message[]>(`${this.baseUrl}messages` + user).subscribe(response=>{
           this.messageStore = response;
-          this.messageSubject.next(this.messages);
+          this.messageSubject.next(this.messageStore);
           console.log(this.messages);
         },error=>{
           this.handleError('Unable to get messages');
